@@ -4,7 +4,7 @@ use crate::config::{Config, StyleConfig, StyleMode};
 
 // Import all theme modules
 use super::{
-    theme_cometix, theme_default, theme_gruvbox, theme_minimal, theme_nord, theme_powerline_dark,
+    theme_classic, theme_default, theme_gruvbox, theme_minimal, theme_nord, theme_powerline_dark,
     theme_powerline_light, theme_powerline_rose_pine, theme_powerline_tokyo_night,
 };
 
@@ -19,7 +19,7 @@ impl ThemePresets {
 
         // Fallback to built-in themes
         match theme_name {
-            "cometix" => Self::get_cometix(),
+            "classic" => Self::get_classic(),
             "default" => Self::get_default(),
             "gruvbox" => Self::get_gruvbox(),
             "minimal" => Self::get_minimal(),
@@ -80,7 +80,7 @@ impl ThemePresets {
     /// List all available themes (built-in + custom)
     pub fn list_available_themes() -> Vec<String> {
         let mut themes = vec![
-            "cometix".to_string(),
+            "classic".to_string(),
             "default".to_string(),
             "minimal".to_string(),
             "gruvbox".to_string(),
@@ -110,7 +110,7 @@ impl ThemePresets {
 
     pub fn get_available_themes() -> Vec<(&'static str, &'static str)> {
         vec![
-            ("cometix", "Cometix theme"),
+            ("classic", "Classic theme"),
             ("default", "Default theme with emoji icons"),
             ("minimal", "Minimal theme with reduced colors"),
             ("gruvbox", "Gruvbox color scheme"),
@@ -122,23 +122,23 @@ impl ThemePresets {
         ]
     }
 
-    pub fn get_cometix() -> Config {
+    pub fn get_classic() -> Config {
         Config {
             style: StyleConfig {
                 mode: StyleMode::NerdFont,
                 separator: " | ".to_string(),
             },
             segments: vec![
-                theme_cometix::model_segment(),
-                theme_cometix::directory_segment(),
-                theme_cometix::git_segment(),
-                theme_cometix::context_window_segment(),
-                theme_cometix::usage_segment(),
-                theme_cometix::cost_segment(),
-                theme_cometix::session_segment(),
-                theme_cometix::output_style_segment(),
+                theme_classic::model_segment(),
+                theme_classic::directory_segment(),
+                theme_classic::git_segment(),
+                theme_classic::context_window_segment(),
+                theme_classic::usage_segment(),
+                theme_classic::cost_segment(),
+                theme_classic::session_segment(),
+                theme_classic::output_style_segment(),
             ],
-            theme: "cometix".to_string(),
+            theme: "classic".to_string(),
         }
     }
 

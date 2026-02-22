@@ -1,6 +1,6 @@
-# CCometixLine
+# cc-statusline
 
-[English](README.md) | [中文](README.zh.md)
+> Fork of [CCometixLine](https://github.com/Haleclipse/CCometixLine) by [Haleclipse](https://github.com/Haleclipse), extended for personal use.
 
 A high-performance Claude Code statusline tool written in Rust with Git integration, usage tracking, interactive TUI configuration, and Claude Code enhancement utilities.
 
@@ -9,20 +9,22 @@ A high-performance Claude Code statusline tool written in Rust with Git integrat
 
 ## Screenshots
 
-![CCometixLine](assets/img1.png)
+![cc-statusline](assets/img1.png)
 
 The statusline shows: Model | Directory | Git Branch Status | Context Window Information
 
 ## Features
 
 ### Core Functionality
-- **Git integration** with branch, status, and tracking info  
+
+- **Git integration** with branch, status, and tracking info
 - **Model display** with simplified Claude model names
 - **Usage tracking** based on transcript analysis
 - **Directory display** showing current workspace
 - **Minimal design** using Nerd Font icons
 
 ### Interactive TUI Features
+
 - **Interactive main menu** when executed without input
 - **TUI configuration interface** with real-time preview
 - **Theme system** with multiple built-in presets
@@ -30,6 +32,7 @@ The statusline shows: Model | Directory | Git Branch Status | Context Window Inf
 - **Configuration management** (init, check, edit)
 
 ### Claude Code Enhancement
+
 - **Context warning disabler** - Remove annoying "Context low" messages
 - **Verbose mode enabler** - Enhanced output detail
 - **Robust patcher** - Survives Claude Code version updates
@@ -43,34 +46,31 @@ Install via npm (works on all platforms):
 
 ```bash
 # Install globally
-npm install -g @cometix/ccline
+npm install -g @architg25/ccline
 
 # Or using yarn
-yarn global add @cometix/ccline
+yarn global add @architg25/ccline
 
 # Or using pnpm
-pnpm add -g @cometix/ccline
-```
-
-Use npm mirror for faster download:
-```bash
-npm install -g @cometix/ccline --registry https://registry.npmmirror.com
+pnpm add -g @architg25/ccline
 ```
 
 After installation:
-- ✅ Global command `ccline` is available everywhere
-- ⚙️ Follow the configuration steps below to integrate with Claude Code
-- 🎨 Run `ccline -c` to open configuration panel for theme selection
+
+- Global command `ccline` is available everywhere
+- Follow the configuration steps below to integrate with Claude Code
+- Run `ccline -c` to open configuration panel for theme selection
 
 ### Claude Code Configuration
 
 Add to your Claude Code `settings.json`:
 
 **Linux/macOS:**
+
 ```json
 {
   "statusLine": {
-    "type": "command", 
+    "type": "command",
     "command": "~/.claude/ccline/ccline",
     "padding": 0
   }
@@ -78,10 +78,11 @@ Add to your Claude Code `settings.json`:
 ```
 
 **Windows:**
+
 ```json
 {
   "statusLine": {
-    "type": "command", 
+    "type": "command",
     "command": "%USERPROFILE%\\.claude\\ccline\\ccline.exe",
     "padding": 0
   }
@@ -89,55 +90,61 @@ Add to your Claude Code `settings.json`:
 ```
 
 **Fallback (npm installation):**
+
 ```json
 {
   "statusLine": {
-    "type": "command", 
+    "type": "command",
     "command": "ccline",
     "padding": 0
   }
 }
 ```
-*Use this if npm global installation is available in PATH*
+
+_Use this if npm global installation is available in PATH_
 
 ### Update
 
 ```bash
-npm update -g @cometix/ccline
+npm update -g @architg25/ccline
 ```
 
 <details>
 <summary>Manual Installation (Click to expand)</summary>
 
-Alternatively, download from [Releases](https://github.com/Haleclipse/CCometixLine/releases):
+Alternatively, download from [Releases](https://github.com/architg25/cc-statusline/releases):
 
 #### Linux
 
 #### Option 1: Dynamic Binary (Recommended)
+
 ```bash
 mkdir -p ~/.claude/ccline
-wget https://github.com/Haleclipse/CCometixLine/releases/latest/download/ccline-linux-x64.tar.gz
+wget https://github.com/architg25/cc-statusline/releases/latest/download/ccline-linux-x64.tar.gz
 tar -xzf ccline-linux-x64.tar.gz
 cp ccline ~/.claude/ccline/
 chmod +x ~/.claude/ccline/ccline
 ```
-*Requires: Ubuntu 22.04+, CentOS 9+, Debian 11+, RHEL 9+ (glibc 2.35+)*
+
+_Requires: Ubuntu 22.04+, CentOS 9+, Debian 11+, RHEL 9+ (glibc 2.35+)_
 
 #### Option 2: Static Binary (Universal Compatibility)
+
 ```bash
 mkdir -p ~/.claude/ccline
-wget https://github.com/Haleclipse/CCometixLine/releases/latest/download/ccline-linux-x64-static.tar.gz
+wget https://github.com/architg25/cc-statusline/releases/latest/download/ccline-linux-x64-static.tar.gz
 tar -xzf ccline-linux-x64-static.tar.gz
 cp ccline ~/.claude/ccline/
 chmod +x ~/.claude/ccline/ccline
 ```
-*Works on any Linux distribution (static, no dependencies)*
+
+_Works on any Linux distribution (static, no dependencies)_
 
 #### macOS (Intel)
 
-```bash  
+```bash
 mkdir -p ~/.claude/ccline
-wget https://github.com/Haleclipse/CCometixLine/releases/latest/download/ccline-macos-x64.tar.gz
+wget https://github.com/architg25/cc-statusline/releases/latest/download/ccline-macos-x64.tar.gz
 tar -xzf ccline-macos-x64.tar.gz
 cp ccline ~/.claude/ccline/
 chmod +x ~/.claude/ccline/ccline
@@ -146,8 +153,8 @@ chmod +x ~/.claude/ccline/ccline
 #### macOS (Apple Silicon)
 
 ```bash
-mkdir -p ~/.claude/ccline  
-wget https://github.com/Haleclipse/CCometixLine/releases/latest/download/ccline-macos-arm64.tar.gz
+mkdir -p ~/.claude/ccline
+wget https://github.com/architg25/cc-statusline/releases/latest/download/ccline-macos-arm64.tar.gz
 tar -xzf ccline-macos-arm64.tar.gz
 cp ccline ~/.claude/ccline/
 chmod +x ~/.claude/ccline/ccline
@@ -158,7 +165,7 @@ chmod +x ~/.claude/ccline/ccline
 ```powershell
 # Create directory and download
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\ccline"
-Invoke-WebRequest -Uri "https://github.com/Haleclipse/CCometixLine/releases/latest/download/ccline-windows-x64.zip" -OutFile "ccline-windows-x64.zip"
+Invoke-WebRequest -Uri "https://github.com/architg25/cc-statusline/releases/latest/download/ccline-windows-x64.zip" -OutFile "ccline-windows-x64.zip"
 Expand-Archive -Path "ccline-windows-x64.zip" -DestinationPath "."
 Move-Item "ccline.exe" "$env:USERPROFILE\.claude\ccline\"
 ```
@@ -168,18 +175,18 @@ Move-Item "ccline.exe" "$env:USERPROFILE\.claude\ccline\"
 ### Build from Source
 
 ```bash
-git clone https://github.com/Haleclipse/CCometixLine.git
-cd CCometixLine
+git clone https://github.com/architg25/cc-statusline.git
+cd cc-statusline
 cargo build --release
 
 # Linux/macOS
 mkdir -p ~/.claude/ccline
-cp target/release/ccometixline ~/.claude/ccline/ccline
+cp target/release/cc-statusline ~/.claude/ccline/ccline
 chmod +x ~/.claude/ccline/ccline
 
 # Windows (PowerShell)
 New-Item -ItemType Directory -Force -Path "$env:USERPROFILE\.claude\ccline"
-copy target\release\ccometixline.exe "$env:USERPROFILE\.claude\ccline\ccline.exe"
+copy target\release\cc-statusline.exe "$env:USERPROFILE\.claude\ccline\ccline.exe"
 ```
 
 ## Usage
@@ -190,7 +197,7 @@ copy target\release\ccometixline.exe "$env:USERPROFILE\.claude\ccline\ccline.exe
 # Initialize configuration file
 ccline --init
 
-# Check configuration validity  
+# Check configuration validity
 ccline --check
 
 # Print current configuration
@@ -204,7 +211,7 @@ ccline --config
 
 ```bash
 # Temporarily use specific theme (overrides config file)
-ccline --theme cometix
+ccline --theme classic
 ccline --theme minimal
 ccline --theme gruvbox
 ccline --theme nord
@@ -231,14 +238,15 @@ Displays: `Directory | Git Branch Status | Model | Context Window`
 ### Git Status Indicators
 
 - Branch name with Nerd Font icon
-- Status: `✓` Clean, `●` Dirty, `⚠` Conflicts  
-- Remote tracking: `↑n` Ahead, `↓n` Behind
+- Status: Clean, Dirty, Conflicts
+- Remote tracking: Ahead, Behind
 
 ### Model Display
 
 Shows simplified Claude model names:
-- `claude-3-5-sonnet` → `Sonnet 3.5`
-- `claude-4-sonnet` → `Sonnet 4`
+
+- `claude-3-5-sonnet` -> `Sonnet 3.5`
+- `claude-4-sonnet` -> `Sonnet 4`
 
 ### Context Window Display
 
@@ -246,7 +254,7 @@ Token usage percentage based on transcript analysis with context limit tracking.
 
 ## Configuration
 
-CCometixLine supports full configuration via TOML files and interactive TUI:
+cc-statusline supports full configuration via TOML files and interactive TUI:
 
 - **Configuration file**: `~/.claude/ccline/config.toml`
 - **Interactive TUI**: `ccline --config` for real-time editing with preview
@@ -256,13 +264,13 @@ CCometixLine supports full configuration via TOML files and interactive TUI:
 ### Available Segments
 
 All segments are configurable with:
+
 - Enable/disable toggle
 - Custom separators and icons
 - Color customization
 - Format options
 
 Supported segments: Directory, Git, Model, Usage, Time, Cost, OutputStyle
-
 
 ## Requirements
 
@@ -285,26 +293,10 @@ cargo test
 cargo build --release
 ```
 
-## Roadmap
+## Credits
 
-- [x] TOML configuration file support
-- [x] TUI configuration interface
-- [x] Custom themes
-- [x] Interactive main menu
-- [x] Claude Code enhancement tools
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit issues or pull requests.
-
-## Related Projects
-
-- [tweakcc](https://github.com/Piebald-AI/tweakcc) - Command-line tool to customize your Claude Code themes, thinking verbs, and more.
+This project is a fork of [CCometixLine](https://github.com/Haleclipse/CCometixLine) by [Haleclipse](https://github.com/Haleclipse). All original work is credited to them. This fork contains personal customizations and extensions.
 
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=Haleclipse/CCometixLine&type=Date)](https://star-history.com/#Haleclipse/CCometixLine&Date)

@@ -1,5 +1,5 @@
 pub mod presets;
-pub mod theme_cometix;
+pub mod theme_classic;
 pub mod theme_default;
 pub mod theme_gruvbox;
 pub mod theme_minimal;

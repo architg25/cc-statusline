@@ -1,14 +1,20 @@
 {
-  "name": "@cometix/ccline-linux-arm64-musl",
+  "name": "@architg25/ccline-linux-arm64-musl",
   "version": "0.0.0",
-  "description": "Linux ARM64 binary (musl) for CCometixLine",
-  "files": ["ccline"],
-  "os": ["linux"],
-  "cpu": ["arm64"],
+  "description": "Linux ARM64 binary (musl) for cc-statusline",
+  "files": [
+    "ccline"
+  ],
+  "os": [
+    "linux"
+  ],
+  "cpu": [
+    "arm64"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/Haleclipse/CCometixLine"
+    "url": "https://github.com/architg25/cc-statusline"
   },
-  "author": "Haleclipse",
+  "author": "architg25",
   "license": "MIT"
 }

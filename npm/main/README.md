@@ -1,20 +1,22 @@
-# @cometix/ccline
+# @architg25/ccline
 
-CCometixLine - High-performance Claude Code StatusLine tool
+cc-statusline - High-performance Claude Code StatusLine tool
+
+> Fork of [CCometixLine](https://github.com/Haleclipse/CCometixLine) by [Haleclipse](https://github.com/Haleclipse), extended for personal use.
 
 ## Installation
 
 ```bash
-npm install -g @cometix/ccline
+npm install -g @architg25/ccline
 ```
 
 ## Features
 
-- 🚀 **Fast**: Written in Rust for maximum performance
-- 🌍 **Cross-platform**: Works on Windows, macOS, and Linux
-- 📦 **Easy installation**: One command via npm
-- 🔄 **Auto-update**: Built-in update notifications
-- 🎨 **Beautiful**: Nerd Font icons and colors
+- **Fast**: Written in Rust for maximum performance
+- **Cross-platform**: Works on Windows, macOS, and Linux
+- **Easy installation**: One command via npm
+- **Auto-update**: Built-in update notifications
+- **Beautiful**: Nerd Font icons and colors
 
 ## Usage
 
@@ -27,16 +29,8 @@ ccline --help
 ccline --version
 ```
 
-## For Users in China
-
-Use npm mirror for faster installation:
-
-```bash
-npm install -g @cometix/ccline --registry https://registry.npmmirror.com
-```
-
 ## More Information
 
-- GitHub: https://github.com/Haleclipse/CCometixLine
-- Issues: https://github.com/Haleclipse/CCometixLine/issues
+- GitHub: https://github.com/architg25/cc-statusline
+- Original project: https://github.com/Haleclipse/CCometixLine
 - License: MIT
