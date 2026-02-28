@@ -289,7 +289,7 @@ cargo build --release
 
 ## Archive
 
-I use [CCometixLine](https://github.com/Haleclipse/CCometixLine) by [Haleclipse](https://github.com/Haleclipse) and have stopped work on this.
+I use [CCometixLine](https://github.com/Haleclipse/CCometixLine) by [Haleclipse](https://github.com/Haleclipse) because all the features I built for myself are now present in the original one and have stopped work on this.
 
 ## License
 
