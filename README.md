@@ -7,12 +7,6 @@ A high-performance Claude Code statusline tool written in Rust with Git integrat
 ![Language:Rust](https://img.shields.io/static/v1?label=Language&message=Rust&color=orange&style=flat-square)
 ![License:MIT](https://img.shields.io/static/v1?label=License&message=MIT&color=blue&style=flat-square)
 
-## Screenshots
-
-![cc-statusline](assets/img1.png)
-
-The statusline shows: Model | Directory | Git Branch Status | Context Window Information
-
 ## Features
 
 ### Core Functionality
@@ -293,9 +287,9 @@ cargo test
 cargo build --release
 ```
 
-## Credits
+## Archive
 
-This project is a fork of [CCometixLine](https://github.com/Haleclipse/CCometixLine) by [Haleclipse](https://github.com/Haleclipse). All original work is credited to them. This fork contains personal customizations and extensions.
+I use [CCometixLine](https://github.com/Haleclipse/CCometixLine) by [Haleclipse](https://github.com/Haleclipse) and have stopped work on this.
 
 ## License
 
